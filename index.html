@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>LEONIDA ONLINE — GTA VI Fan Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="boot">
+    <div class="boot-inner">
+      <p class="eyebrow">UNOFFICIAL FAN PROTOTYPE · NOT AFFILIATED WITH ROCKSTAR</p>
+      <h1>GTA VI<br /><span>ONLINE</span></h1>
+      <p class="tag">Leonida nights. Vice City heat. A browser slice while the real thing waits for November 19.</p>
+      <div class="chars">
+        <button class="char" data-char="lucia" id="pickLucia">
+          <div class="avatar lucia"></div>
+          <strong>LUCIA</strong>
+          <span>Fast hands. Faster getaway.</span>
+        </button>
+        <button class="char" data-char="jason" id="pickJason">
+          <div class="avatar jason"></div>
+          <strong>JASON</strong>
+          <span>Quiet until the engine is not.</span>
+        </button>
+      </div>
+      <button id="enterBtn" class="enter" disabled>SELECT A CHARACTER</button>
+      <p class="hint">WASD drive / walk · F enter-exit · SPACE brake · SHIFT boost · LMB shoot · M map · P phone · 1-4 missions</p>
+    </div>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div class="top-left">
+      <div class="cash" id="cash">$0</div>
+      <div class="stars" id="stars"></div>
+      <div class="wanted-label" id="wantedLabel"></div>
+    </div>
+    <div class="top-right">
+      <div class="clock" id="clock">21:00</div>
+      <div class="session" id="session">LEONIDA · 24 PLAYERS</div>
+    </div>
+    <div class="bottom-left">
+      <div class="minimap-wrap">
+        <canvas id="minimap" width="180" height="180"></canvas>
+        <div class="map-label">LEONIDA</div>
+      </div>
+      <div class="weapon" id="weapon">UNARMED</div>
+    </div>
+    <div class="bottom-center">
+      <div class="prompt" id="prompt"></div>
+      <div class="mission" id="mission"></div>
+    </div>
+    <div class="killfeed" id="killfeed"></div>
+    <div id="phone" class="phone hidden">
+      <div class="phone-top">iFruit</div>
+      <button data-job="boost">01 · STREET BOOST — steal the marked ride</button>
+      <button data-job="drop">02 · BEACH DROP — deliver a package south</button>
+      <button data-job="heat">03 · COOL OFF — lose a 3★ chase</button>
+      <button data-job="hit">04 · SUNSET HIT — wreck the marked target</button>
+      <p>Tap P to close · jobs pay GTA$ and RP</p>
+    </div>
+    <div id="pause" class="pause hidden">
+      <h2>PAUSED</h2>
+      <p>Unofficial fan build. Rockstar / Take-Two own Grand Theft Auto.</p>
+      <p>November 19, 2026 — official single-player. Online comes later.</p>
+      <button id="resumeBtn">BACK TO LEONIDA</button>
+    </div>
+    <div id="busted" class="overlay hidden">
+      <h2 id="endTitle">BUSTED</h2>
+      <p id="endCopy">The Leonida PD caught up.</p>
+      <button id="respawnBtn">RESPAWN</button>
+    </div>
+  </div>
+
+  <div id="touch" class="hidden">
+    <div id="stick"></div>
+    <button id="lookPad"></button>
+    <button id="btnF">F</button>
+    <button id="btnBoost">NITRO</button>
+    <button id="btnShoot">FIRE</button>
+    <button id="btnBrake">BRAKE</button>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js"
+    }
+  }
+  </script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
